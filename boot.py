@@ -7,7 +7,7 @@ def connect():
         print('connecting to network...')
         sta_if.active(True)
         # Update this to your wifi network
-        sta_if.connect('TRI Guest WiFi', 'tri welcomes you')
+        sta_if.connect('<FILL SSID IN>', '<FILL PASSWORD IN>')
         counter = 0
         while not sta_if.isconnected():
             counter += 1
@@ -27,5 +27,4 @@ def install_mqtt():
     upip.install('micropython-umqtt.simple')
     upip.install('micropython-umqtt.robust')
 
-no_debug()
 connect()
