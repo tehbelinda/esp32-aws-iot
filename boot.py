@@ -1,13 +1,16 @@
 # This file is automatically run on boot
 
+# Update this with your wifi network details
+SSID = '<FILL IN SSID>'
+PASSWORD = '<FILL IN PASSWORD>'
+
 def connect():
     import network
     sta_if = network.WLAN(network.STA_IF)
     if not sta_if.isconnected():
         print('connecting to network...')
         sta_if.active(True)
-        # Update this to your wifi network
-        sta_if.connect('<FILL SSID IN>', '<FILL PASSWORD IN>')
+        sta_if.connect(SSID, PASSWORD)
         counter = 0
         while not sta_if.isconnected():
             counter += 1
